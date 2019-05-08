@@ -16,15 +16,19 @@ PATTERN = "^[r,b,g,w,y]+$"
 
 
 def check_answer(answer, nbr_colors):
+	""" This method handles the logic for checking whether or not the answer is correct """
 
 	def check_result(ans,ms):
+		""" Helper method to handle repeated checks """
 		if ans <= ms:
 			result = ans
 		else:
 			result = ms
 
 		return result
+	# -----------------------------------
 
+	# Set some default variables
 	global MASTER_SOLUTION
 
 	check1, check2, check3, check4, check5 = 0,0,0,0,0
@@ -33,7 +37,7 @@ def check_answer(answer, nbr_colors):
 	r_cnt_ans, b_cnt_ans, g_cnt_ans, w_cnt_ans, y_cnt_ans = 0,0,0,0,0
 	r_result, b_result, g_result, w_result, y_result = 0,0,0,0,0
 
-
+	# Handles the correct answer in the correct space logix
 	if answer[0] == MASTER_SOLUTION[0]:
 		check1 = 1
 
@@ -98,35 +102,51 @@ def check_answer(answer, nbr_colors):
 
 # ---------------------------------------------------
 
-nbr_colors = input("How many colors do you want to play with? (2-5): ")
-nbr_colors = int(nbr_colors)
+def run():
+	""" Handles the starting of the game """
 
-color_list = []
-for x in range(nbr_colors):
-	color_list.append(COLORS[x+1])
+	# Get how many colors the user wants to play with
+	nbr_colors = input("How many colors do you want to play with? (2-5): ")
+	nbr_colors = int(nbr_colors)
 
-for x in range(5):
-	rand_nbr = random.randint(1,nbr_colors)
-	MASTER_SOLUTION.append(COLORS[rand_nbr])
+	# Empty list that will store what colors are chosen
+	color_list = []
+	for x in range(nbr_colors):
+		color_list.append(COLORS[x+1])
 
-print("[DEBUG] The MASTER SOLUTION is:",MASTER_SOLUTION,'\n')
+	# Build the master solution so we know what the solution is
+	for x in range(5):
+		rand_nbr = random.randint(1,nbr_colors)
+		MASTER_SOLUTION.append(COLORS[rand_nbr])
 
-print("You are playing with {} colors. Your choices can be 5 of the following letters: {})\n".format(nbr_colors, color_list))
+	# Debug statements to see what our solution is
+	print("[DEBUG] The MASTER SOLUTION is:",MASTER_SOLUTION,'\n')
 
-end_game = False
-while end_game == False:
+	# Just some helpful info to display to the user
+	print("You are playing with {} colors. Your choices can be 5 of the following letters: {})\n".format(nbr_colors, color_list))
 
-	answer = input("What 5 colors would you like to try?: {} ".format(color_list))
-	answer = str(answer)
+	# Start the logic for playing the game
+	end_game = False
+	while end_game == False:
 
-	if re.search(PATTERN,answer):
-		if len(answer) == 5:
-			# Check user answer with MASTER_SOLUTION
-			end_game = check_answer(answer, nbr_colors)
+		# Prompt user for their choice
+		answer = input("What 5 colors would you like to try?: {} ".format(color_list))
+		answer = str(answer)
+
+		# Check the answer to make sure it is a valid selection by matching our regex
+		if re.search(PATTERN,answer):
+			if len(answer) == 5:
+				# Check user answer with MASTER_SOLUTION
+				end_game = check_answer(answer, nbr_colors)
+			else:
+				print("You must choose 5 letters.")
 		else:
-			print("You must choose 5 letters.")
-	else:
-		print("You are playing with {} colors. Your choices can be 5 of the following letters: {})".format(nbr_colors, color_list))
+			print("You are playing with {} colors. Your choices can be 5 of the following letters: {})".format(nbr_colors, color_list))
 
 
-print("Congratulations, you won!!!")
+	print("Congratulations, you won!!!")
+
+# ------------------------------------------------
+
+# Run the game
+run()
