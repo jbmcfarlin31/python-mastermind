@@ -105,7 +105,7 @@ def check_answer(answer, nbr_colors):
 	answer_text = COLORS_TEXT(answer[3])
 	answer_text = answer_text + ', '
 
-    answer_text = COLORS_TEXT(answer[4])
+	answer_text = COLORS_TEXT(answer[4])
 	answer_text = answer_text 
 
 	#print("You entered {}".format(answer))
