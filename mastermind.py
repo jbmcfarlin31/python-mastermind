@@ -108,11 +108,15 @@ def check_answer(answer, nbr_colors):
 	# answer_text = COLORS_TEXT[answer[4]]
 	# answer_text = answer_text
 
-	answer_text = """
-	You entered {}, {}, {}, {}, {}
-	""".format(COLORS_TEXT[answer[0]],COLORS_TEXT[answer[1]],COLORS_TEXT[answer[2]],COLORS_TEXT[answer[3]],COLORS_TEXT[answer[4]])
+	answer_text = """You entered {}, {}, {}, {}, {}""".format(
+		COLORS_TEXT[answer[0]],
+		COLORS_TEXT[answer[1]],
+		COLORS_TEXT[answer[2]],
+		COLORS_TEXT[answer[3]],
+		COLORS_TEXT[answer[4]]
+		)
 
-	print("You entered {}".format(answer_text))
+	print(answer_text)
 
 	print("The correct number in the correct spot was {}".format(correct_answer_in_correct_space))
 	print("The correct number in the wrong spot was {}".format(correct_answer_in_wrong_space))
