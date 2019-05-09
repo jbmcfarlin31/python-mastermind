@@ -9,6 +9,13 @@ COLORS = {
 	4: 'w',
 	5: 'y'
 }
+COLORS_TEXT = {
+	'r': 'red',
+	'b': 'blue',
+	'g': 'green',
+	'w': 'white',
+	'y': 'yellow'
+}
 
 MASTER_SOLUTION = []
 
@@ -85,9 +92,25 @@ def check_answer(answer, nbr_colors):
 	correct_answer_in_wrong_space = r_result + b_result + g_result + w_result + y_result
 	correct_answer_in_wrong_space = correct_answer_in_wrong_space - correct_answer_in_correct_space
 
-
 	print('\n')
-	print("You entered {}".format(answer))
+	answer_text = COLORS_TEXT(answer[0])
+	answer_text = answer_text + ', '
+
+	answer_text = COLORS_TEXT(answer[1])
+	answer_text = answer_text + ', '
+	
+	answer_text = COLORS_TEXT(answer[2])
+	answer_text = answer_text + ', '
+	
+	answer_text = COLORS_TEXT(answer[3])
+	answer_text = answer_text + ', '
+
+    answer_text = COLORS_TEXT(answer[4])
+	answer_text = answer_text 
+
+	#print("You entered {}".format(answer))
+	print("You entered {}".format(answer_text))
+
 	print("The correct number in the correct spot was {}".format(correct_answer_in_correct_space))
 	print("The correct number in the wrong spot was {}".format(correct_answer_in_wrong_space))
 	print('\n')
