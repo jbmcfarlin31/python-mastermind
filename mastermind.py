@@ -126,12 +126,14 @@ def run():
 	print("You are playing with {} colors. Your choices can be 5 of the following letters: {})\n".format(nbr_colors, color_list))
 
 	# Start the logic for playing the game
+	userCounter = 0
 	end_game = False
 	while end_game == False:
 
 		# Prompt user for their choice
 		answer = input("What 5 colors would you like to try?: {} ".format(color_list))
 		answer = str(answer)
+		userCounter += 1
 
 		# Check the answer to make sure it is a valid selection by matching our regex
 		if re.search(PATTERN,answer):
@@ -144,7 +146,7 @@ def run():
 			print("You are playing with {} colors. Your choices can be 5 of the following letters: {})".format(nbr_colors, color_list))
 
 
-	print("Congratulations, you won!!!")
+	print("Congratulations, you won!!!  It took you {} tries to win".format(userCounter))
 
 # ------------------------------------------------
 
