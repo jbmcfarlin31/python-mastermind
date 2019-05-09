@@ -110,7 +110,7 @@ def check_answer(answer, nbr_colors):
 
 	answer_text = """
 	You entered {}, {}, {}, {}, {}
-	""".format(COLORS_TEXT[answer_text[0]],COLORS_TEXT[answer_text[1]],COLORS_TEXT[answer_text[2]],COLORS_TEXT[answer_text[3]],COLORS_TEXT[answer_text[4]])
+	""".format(COLORS_TEXT[answer[0]],COLORS_TEXT[answer[1]],COLORS_TEXT[answer[2]],COLORS_TEXT[answer[3]],COLORS_TEXT[answer[4]])
 
 	print("You entered {}".format(answer_text))
 
