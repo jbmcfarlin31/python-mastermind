@@ -120,7 +120,7 @@ def run():
 		MASTER_SOLUTION.append(COLORS[rand_nbr])
 
 	# Debug statements to see what our solution is
-	print("[DEBUG] The MASTER SOLUTION is:",MASTER_SOLUTION,'\n')
+	#print("[DEBUG] The MASTER SOLUTION is:",MASTER_SOLUTION,'\n')
 
 	# Just some helpful info to display to the user
 	print("You are playing with {} colors. Your choices can be 5 of the following letters: {}\n".format(nbr_colors, color_list))
@@ -146,7 +146,7 @@ def run():
 			print("You are playing with {} colors. Your choices can be 5 of the following letters: {}".format(nbr_colors, color_list))
 
 
-	print("Congratulations, you won!!!  It took you {} tries to win".format(userCounter))
+	print("Congratulations, you won!!! It took you {} tries to win".format(userCounter))
 
 # ------------------------------------------------
 
