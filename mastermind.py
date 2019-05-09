@@ -108,7 +108,6 @@ def check_answer(answer, nbr_colors):
 	answer_text = COLORS_TEXT(answer[4])
 	answer_text = answer_text 
 
-	#print("You entered {}".format(answer))
 	print("You entered {}".format(answer_text))
 
 	print("The correct number in the correct spot was {}".format(correct_answer_in_correct_space))
