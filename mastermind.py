@@ -93,19 +93,19 @@ def check_answer(answer, nbr_colors):
 	correct_answer_in_wrong_space = correct_answer_in_wrong_space - correct_answer_in_correct_space
 
 	print('\n')
-	answer_text = COLORS_TEXT(answer[0])
+	answer_text = COLORS_TEXT[answer[0]]
 	answer_text = answer_text + ', '
 
-	answer_text = COLORS_TEXT(answer[1])
+	answer_text = COLORS_TEXT[answer[1]]
 	answer_text = answer_text + ', '
 	
-	answer_text = COLORS_TEXT(answer[2])
+	answer_text = COLORS_TEXT[answer[2]]
 	answer_text = answer_text + ', '
 	
-	answer_text = COLORS_TEXT(answer[3])
+	answer_text = COLORS_TEXT[answer[3]]
 	answer_text = answer_text + ', '
 
-	answer_text = COLORS_TEXT(answer[4])
+	answer_text = COLORS_TEXT[answer[4]]
 	answer_text = answer_text 
 
 	print("You entered {}".format(answer_text))
